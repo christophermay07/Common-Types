@@ -1,16 +1,20 @@
-<?xml version="1.0"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <modelVersion>4.0.0</modelVersion>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
     <parent>
         <groupId>org.sonatype.oss</groupId>
         <artifactId>oss-parent</artifactId>
         <version>7</version>
     </parent>
+
     <groupId>org.connectopensource</groupId>
-    <version>4.1.2-SNAPSHOT</version>
     <artifactId>CONNECTCommonTypesLib</artifactId>
+    <version>4.1.2-SNAPSHOT</version>
     <packaging>jar</packaging>
-    <name>CONNECT common types</name>
+    <modelVersion>4.0.0</modelVersion>
+
+    <name>CONNECT Common Types</name>
 
     <scm>
         <connection>scm:git:git@github.com:${git.username}/Common-Types.git</connection>
@@ -18,9 +22,6 @@
         <url>https://github.com/${git.username}/Common-Types</url>
         <tag>HEAD</tag>
     </scm>
-
-    <developers>
-    </developers>
 
     <prerequisites>
         <maven>3.0.4</maven>
@@ -61,6 +62,7 @@
                 </includes>
             </resource>
         </resources>
+
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -123,6 +125,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jar-plugin</artifactId>
+                <version>2.5</version>
                 <configuration>
                     <!-- use baseVersion instead of unique timestamp version to support skinny WARS -->
                     <outputFileNameMapping>@{artifactId}@-@{baseVersion}@.@{extension}@</outputFileNameMapping>
@@ -130,6 +133,7 @@
             </plugin>
         </plugins>
     </build>
+
     <pluginRepositories>
         <pluginRepository>
             <id>apache-snapshots</id>
@@ -140,6 +144,7 @@
             </snapshots>
         </pluginRepository>
     </pluginRepositories>
+
     <profiles>
         <profile>
             <id>linux</id>
