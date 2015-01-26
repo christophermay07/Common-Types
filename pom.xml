@@ -45,6 +45,11 @@
         </repository>
     </distributionManagement>
 
+    <properties>
+        <compiler.source>1.6</compiler.source>
+        <compiler.target>1.6</compiler.target>
+    </properties>
+
     <dependencies>
         <dependency>
             <groupId>com.sun.xml.bind</groupId>
@@ -98,8 +103,8 @@
                         <include>directConfig/**/*.xsd</include>
                         <include>caqh/**/*.xsd</include>
                     </schemaIncludes>
-                    <source>1.6</source>
-                    <target>1.6</target>
+                    <source>${compiler.source}</source>
+                    <target>${compiler.target}</target>
                 </configuration>
                 <executions>
                     <execution>
@@ -116,10 +121,10 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.0</version>
                 <configuration>
-                    <source>1.6</source>
-                    <target>1.6</target>
-                    <testSource>1.6</testSource>
-                    <testTarget>1.6</testTarget>
+                    <source>${compiler.source}</source>
+                    <target>${compiler.target}</target>
+                    <testSource>${compiler.source}</testSource>
+                    <testTarget>${compiler.target}</testTarget>
                 </configuration>
             </plugin>
             <plugin>
